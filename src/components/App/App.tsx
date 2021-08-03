@@ -51,6 +51,7 @@ export default class extends React.Component {
                 )
               }
               skin="standard"
+              dataHook="clear-button"
               priority="secondary"
               onClick={() =>
                 this.setState({
@@ -68,6 +69,7 @@ export default class extends React.Component {
               disabled={
                 !(this.state.firstName !== '' && this.state.lastName !== '')
               }
+              dataHook="submit-button"
               onClick={() => {
                 this.setState({
                   isSubmitted: true,
@@ -124,6 +126,7 @@ export default class extends React.Component {
                               this.setState({ firstName: e.target.value })
                             }
                             value={this.state.firstName}
+                            dataHook="first-name-input"
                           />
                         </FormField>
                       </Cell>
@@ -131,6 +134,7 @@ export default class extends React.Component {
                         <FormField label="Last name" required>
                           <Input
                             value={this.state.lastName}
+                            dataHook="last-name-input"
                             onChange={(e) =>
                               this.setState({ lastName: e.target.value })
                             }
@@ -196,7 +200,7 @@ export default class extends React.Component {
                       <Layout>
                         <Cell>
                           <Heading appearance="H6">First name</Heading>
-                          <Text size="medium">
+                          <Text size="medium" dataHook="submitted-first-name">
                             {this.state.submittedFirstName}
                           </Text>
                         </Cell>
